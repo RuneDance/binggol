@@ -4,7 +4,9 @@
 - Bootstrap 3.3.7
 - jQuery 3.2.1
 - SpringBoot 1.5.7
-- MyBatis
+- JdbcTemplate
+- thymeleaf
+- 存储过程
 - Let's Encrypt (https)
 
 #### 开发环境：

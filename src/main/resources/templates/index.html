@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <title>测试</title>
+
+    <!-- bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../plugs/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <!-- bootstrap-dialog.min.css 3.3.7 -->
+    <link rel="stylesheet" href="../plugs/bootstrap-3.3.7/css/bootstrap-dialog.min.css"/>
+
+    <!--easyform 1.3.4-->
+    <link rel="stylesheet" href="../plugs/easyform-1.3.4/css/easyform.css"/>
+    <!-- font-awesome 4.7.0 -->
+    <link rel="stylesheet" href="../plugs/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <!-- index.css -->
+    <link rel="stylesheet" href="../css/index.css"/>
+
+
+    <!-- jquery 3.2.1 -->
+    <script src="../plugs/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <!-- bootstrap 3.3.7 -->
+    <script src="../plugs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- bootstrap-dialog.min.js 3.3.7 -->
+    <script src="../plugs/bootstrap-3.3.7/js/bootstrap-dialog.min.js"></script>
+    <!-- easyform 1.3.4 -->
+    <script src="../plugs/easyform-1.3.4/js/easyform.js"></script>
+    <!-- index.js -->
+    <script src="../js/index.js"></script>
+
+</head>
+<body>
+<div id="emp">
+    <div class="container-fluid">
+        <form class="form-horizontal" id="emp-form" method="POST" th:action="@{/query}">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="empNo" class="col-sm-3 control-label">员工编号：</label>
+                        <div class="col-sm-9">
+                            <input type="TEXT" class="form-control" id="empNo" name="empno" placeholder="编号"
+                                   data-easyform="length:4;uint:1000 9999;real-time;" data-message="请输入4位员工编号"
+                                   data-easytip="class:easy-red;position:right;"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empName" class="col-sm-3 control-label">员工姓名：</label>
+                        <div class="col-sm-9">
+                            <input type="TEXT" class="form-control" id="empName" name="ename" placeholder="姓名"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empJob" class="col-sm-3 control-label">员工职位：</label>
+                        <div class="col-sm-9">
+                            <input type="TEXT" class="form-control" id="empJob" name="job" placeholder="职位"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="mgrNo" class="col-sm-3 control-label text-left">上级编号：</label>
+                        <div class="col-sm-9">
+                            <input type="TEXT" class="form-control" id="mgrNo" name="mgr" placeholder="上级编号"
+                                   data-easyform="length:4;uint:1000 9999;real-time;" data-message="请输入4位上级编号"
+                                   data-easytip="class:easy-red;position:right;"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empSal" class="col-sm-3 control-label">员工薪水：</label>
+                        <div class="col-sm-9">
+                            <input type="TEXT" class="form-control" id="empSal" name="sal" placeholder="薪水"
+                                   data-easyform="money;real-time;" data-message="请输入正确的员工薪水"
+                                   data-easytip="class:easy-red;position:right;"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid" id="btn-panl">
+                <div class="row">
+                    <div class="col-md-1">
+                        <button type="SUBMIT" id="btn-query" class="btn btn-primary" onclick="check('btn-query');">
+                            <span class="glyphicon glyphicon-zoom-in"></span> 查询
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" id="btn-add" class="btn btn-primary" onclick="check('btn-add');">
+                            <span class="glyphicon glyphicon-plus"></span> 新增
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" id="btn-update" class="btn btn-primary" onclick="check('btn-update');">
+                            <span class="glyphicon glyphicon-edit"></span> 修改
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" id="btn-delete" class="btn btn-primary" onclick="check('btn-delete');">
+                            <span class="glyphicon glyphicon-trash"></span> 删除
+                        </button>
+                    </div>
+                    <div class="col-md-8">
+                        <!--<nav aria-label="Page navigation">-->
+                        <ul class="pagination pagination-sm">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!--</nav>-->
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr class="tab-title">
+                    <th>员工编号</th>
+                    <th>员工姓名</th>
+                    <th>员工职位</th>
+                    <th>上级编号</th>
+                    <th>出生日期</th>
+                    <th>员工薪水</th>
+                    <th>员工佣金</th>
+                    <th>部门编号</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="emp, userStat : ${empList}">
+                    <td th:text="${emp.empno}"></td>
+                    <td th:text="${emp.ename}"></td>
+                    <td th:text="${emp.job}"></td>
+                    <td th:text="${emp.mgr}"></td>
+                    <td th:text="${emp.hiredate}"></td>
+                    <td th:text="${emp.sal}"></td>
+                    <td th:text="${emp.comm}"></td>
+                    <td th:text="${emp.deptno}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

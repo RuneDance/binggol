@@ -47,6 +47,18 @@
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sourceforge.nekohtml</groupId>
+      <artifactId>nekohtml</artifactId>
+      <version>1.9.22</version>
+    </dependency>
+
     <!-- MySQL -->
     <!--<dependency>
       <groupId>mysql</groupId>
@@ -74,8 +86,12 @@
       <scope>test</scope>
     </dependency>
 
-
-
+    <!-- alibaba-fastjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.40</version>
+    </dependency>
 
 
     <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -109,11 +125,18 @@
 
   <build>
     <finalName>binggol</finalName>
-
+    <resources>
+      <resource>
+        <directory>${basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <fork>true</fork>
+        </configuration>
       </plugin>
     </plugins>
   </build>
