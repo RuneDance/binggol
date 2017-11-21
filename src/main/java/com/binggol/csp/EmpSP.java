@@ -72,4 +72,13 @@ public class EmpSP {
         });
         return spResult;
     }
+
+
+    /*public SPResult add(QueryEmp queryEmp) {
+
+    }*/
+
+
+
+
 }

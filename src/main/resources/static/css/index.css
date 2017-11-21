@@ -27,3 +27,11 @@
 .table-hover>tbody>tr:hover {
     background-color: #e3e3e3;
 }
+
+/*.table-striped>tbody>tr {
+    background-color: palevioletred;
+}*/
+
+.backcolor {
+     background-color: #b5b5b5;
+ }

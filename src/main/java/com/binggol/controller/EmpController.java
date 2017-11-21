@@ -25,7 +25,13 @@ public class EmpController {
         return "index";
     }
 
-
+    /**
+     * 查询
+     * @param queryEmp
+     * @param model
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/query", method = RequestMethod.POST)
     public String query(QueryEmp queryEmp, ModelMap model, HttpServletRequest request) {
         String empno = request.getParameter("empno");
@@ -57,6 +63,13 @@ public class EmpController {
             return "index";
         }
     }
+
+
+
+    /*@RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String add(QueryEmp queryEmp, ModelMap model, HttpServletRequest request) {
+
+    }*/
 
 
 }
