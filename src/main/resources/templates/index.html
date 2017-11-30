@@ -4,17 +4,18 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <title>测试</title>
+    <title>Demo</title>
 
     <!-- bootstrap 3.3.7 -->
     <link rel="stylesheet" href="../plugs/bootstrap-3.3.7/css/bootstrap.min.css"/>
     <!-- bootstrap-dialog.min.css 3.3.7 -->
     <link rel="stylesheet" href="../plugs/bootstrap-3.3.7/css/bootstrap-dialog.min.css"/>
-
     <!--easyform 1.3.4-->
     <link rel="stylesheet" href="../plugs/easyform-1.3.4/css/easyform.css"/>
     <!-- font-awesome 4.7.0 -->
     <link rel="stylesheet" href="../plugs/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <!-- layer 3.1.0 -->
+    <link rel="stylesheet" href="../plugs/layer-3.1.0/theme/default/layer.css">
     <!-- index.css -->
     <link rel="stylesheet" href="../css/index.css"/>
 
@@ -27,6 +28,8 @@
     <script src="../plugs/bootstrap-3.3.7/js/bootstrap-dialog.min.js"></script>
     <!-- easyform 1.3.4 -->
     <script src="../plugs/easyform-1.3.4/js/easyform.js"></script>
+    <!-- layer 3.1.0 -->
+    <script src="../plugs/layer-3.1.0/layer.js"></script>
     <!-- index.js -->
     <script src="../js/index.js"></script>
 
@@ -41,7 +44,8 @@
                         <label for="empNo" class="col-sm-3 control-label">员工编号：</label>
                         <div class="col-sm-9">
                             <input type="TEXT" class="form-control" id="empNo" name="empno" placeholder="编号"
-                                   data-easyform="length:4;uint:1000 9999;real-time;ajax:ajax_empno();" data-message="请输入4位员工编号"
+                                   data-easyform="length:4;uint:1000 9999;real-time;ajax:ajax_empno();"
+                                   data-message="请输入4位员工编号"
                                    data-easytip="class:easy-red;position:right;"/>
                         </div>
                     </div>
@@ -86,46 +90,44 @@
             <div class="container-fluid" id="btn-panl">
                 <div class="row">
                     <div class="col-md-1">
-                        <button type="SUBMIT" id="btn-query" class="btn btn-primary" onclick="check('btn-query');">
-                            <span class="glyphicon glyphicon-zoom-in"></span> 查询
-                        </button>
+                        <div class="form-group">
+                            <button type="SUBMIT" id="btn-query" class="btn btn-primary btn-block"
+                                    onclick="check('btn-query');">
+                                <span class="glyphicon glyphicon-zoom-in"></span> 查询
+                            </button>
+                        </div>
                     </div>
                     <div class="col-md-1">
-                        <button type="button" id="btn-add" class="btn btn-primary" onclick="check('btn-add');">
-                            <span class="glyphicon glyphicon-plus"></span> 新增
-                        </button>
+                        <div class="form-group">
+                            <button type="button" id="btn-add" class="btn btn-primary btn-block"
+                                    onclick="check('btn-add');">
+                                <span class="glyphicon glyphicon-plus"></span> 新增
+                            </button>
+                        </div>
                     </div>
                     <div class="col-md-1">
-                        <button type="button" id="btn-update" class="btn btn-primary" onclick="check('btn-update');">
-                            <span class="glyphicon glyphicon-edit"></span> 修改
-                        </button>
+                        <div class="form-group">
+                            <button type="button" id="btn-update" class="btn btn-primary btn-block"
+                                    onclick="check('btn-update');">
+                                <span class="glyphicon glyphicon-edit"></span> 修改
+                            </button>
+                        </div>
                     </div>
                     <div class="col-md-1">
-                        <button type="button" id="btn-delete" class="btn btn-primary" onclick="check('btn-delete');">
-                            <span class="glyphicon glyphicon-trash"></span> 删除
-                        </button>
+                        <div class="form-group">
+                            <button type="button" id="btn-delete" class="btn btn-primary btn-block"
+                                    onclick="check('btn-delete');">
+                                <span class="glyphicon glyphicon-trash"></span> 删除
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <!--<nav aria-label="Page navigation">-->
-                        <ul class="pagination pagination-sm">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
+                    <nav aria-label="Page navigation">
+                        <ul class="pager">
+                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> 上一页</a>
                             </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
+                            <li class="next"><a href="#">下一页 <span aria-hidden="true">&rarr;</span></a></li>
                         </ul>
-                        <!--</nav>-->
-                    </div>
+                    </nav>
                 </div>
             </div>
 

@@ -9,9 +9,9 @@
     margin-left: -15px;
 }
 
-#btn-panl {
+/*#btn-panl {
     border: 1px solid #ddd;
-}
+}*/
 
 .tab-title {
     background-color: #cecdcd;
@@ -24,14 +24,17 @@
     border-radius: 4px;
 }
 
-.table-hover>tbody>tr:hover {
+.table-hover > tbody > tr:hover {
     background-color: #e3e3e3;
 }
 
-/*.table-striped>tbody>tr {
-    background-color: palevioletred;
-}*/
-
 .backcolor {
-     background-color: #b5b5b5;
- }
+    background-color: #b5b5b5;
+}
+
+nav .pager {
+    padding-left: 0;
+    margin: 0px 5px 10px 5px;
+    text-align: center;
+    list-style: none;
+}
