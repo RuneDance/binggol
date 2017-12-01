@@ -35,104 +35,113 @@
 
 </head>
 <body>
-<div id="emp">
-    <div class="container-fluid">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title text-center">员工表增、删、改、查Demo</h2>
+    </div>
+    <div class="panel-body">
         <form class="form-horizontal" id="emp-form" method="POST" th:action="@{/query}">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="empNo" class="col-sm-3 control-label">员工编号：</label>
-                        <div class="col-sm-9">
-                            <input type="TEXT" class="form-control" id="empNo" name="empno" placeholder="编号"
-                                   data-easyform="length:4;uint:1000 9999;real-time;ajax:ajax_empno();"
-                                   data-message="请输入4位员工编号"
-                                   data-easytip="class:easy-red;position:right;"/>
+            <div class="panel-group">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="empNo" class="col-sm-3 control-label">员工编号：</label>
+                            <div class="col-sm-9">
+                                <input type="TEXT" class="form-control" id="empNo" name="empno" placeholder="编号"
+                                       data-easyform="length:4;uint:1000 9999;real-time;ajax:ajax_empno();"
+                                       data-message="请输入4位员工编号"
+                                       data-easytip="class:easy-red;position:right;"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="empName" class="col-sm-3 control-label">员工姓名：</label>
-                        <div class="col-sm-9">
-                            <input type="TEXT" class="form-control" id="empName" name="ename" placeholder="姓名"/>
+                        <div class="col-md-4">
+                            <label for="empName" class="col-sm-3 control-label">员工姓名：</label>
+                            <div class="col-sm-9">
+                                <input type="TEXT" class="form-control" id="empName" name="ename" placeholder="姓名"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="empJob" class="col-sm-3 control-label">员工职位：</label>
-                        <div class="col-sm-9">
-                            <input type="TEXT" class="form-control" id="empJob" name="job" placeholder="职位"/>
+                        <div class="col-md-4">
+                            <label for="empJob" class="col-sm-3 control-label">员工职位：</label>
+                            <div class="col-sm-9">
+                                <input type="TEXT" class="form-control" id="empJob" name="job" placeholder="职位"/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="mgrNo" class="col-sm-3 control-label text-left">上级编号：</label>
-                        <div class="col-sm-9">
-                            <input type="TEXT" class="form-control" id="mgrNo" name="mgr" placeholder="上级编号"
-                                   data-easyform="length:4;uint:1000 9999;real-time;" data-message="请输入4位上级编号"
-                                   data-easytip="class:easy-red;position:right;"/>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="mgrNo" class="col-sm-3 control-label text-left">上级编号：</label>
+                            <div class="col-sm-9">
+                                <input type="TEXT" class="form-control" id="mgrNo" name="mgr" placeholder="上级编号"
+                                       data-easyform="length:4;uint:1000 9999;real-time;" data-message="请输入4位上级编号"
+                                       data-easytip="class:easy-red;position:right;"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="empSal" class="col-sm-3 control-label">员工薪水：</label>
-                        <div class="col-sm-9">
-                            <input type="TEXT" class="form-control" id="empSal" name="sal" placeholder="薪水"
-                                   data-easyform="money;real-time;" data-message="请输入正确的员工薪水"
-                                   data-easytip="class:easy-red;position:right;"/>
+                        <div class="col-md-4">
+                            <label for="empSal" class="col-sm-3 control-label">员工薪水：</label>
+                            <div class="col-sm-9">
+                                <input type="TEXT" class="form-control" id="empSal" name="sal" placeholder="薪水"
+                                       data-easyform="money;real-time;" data-message="请输入正确的员工薪水"
+                                       data-easytip="class:easy-red;position:right;"/>
+                            </div>
                         </div>
+                        <div class="col-md-4"></div>
                     </div>
-                    <div class="col-md-4"></div>
                 </div>
             </div>
-
-
-            <div class="container-fluid" id="btn-panl">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <button type="SUBMIT" id="btn-query" class="btn btn-primary btn-block"
-                                    onclick="check('btn-query');">
-                                <span class="glyphicon glyphicon-zoom-in"></span> 查询
-                            </button>
+            <hr/>
+            <div class="panel-group">
+                <div class="container-fluid" id="btn-panl">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <button type="SUBMIT" id="btn-query" class="btn btn-primary btn-block"
+                                        onclick="check('btn-query');">
+                                    <span class="glyphicon glyphicon-zoom-in"></span> 查询
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <button type="button" id="btn-add" class="btn btn-primary btn-block"
+                                        onclick="check('btn-add');">
+                                    <span class="glyphicon glyphicon-plus"></span> 新增
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <button type="button" id="btn-update" class="btn btn-primary btn-block"
+                                        onclick="check('btn-update');">
+                                    <span class="glyphicon glyphicon-edit"></span> 修改
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <button type="button" id="btn-delete" class="btn btn-primary btn-block"
+                                        onclick="check('btn-delete');">
+                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <nav aria-label="Page navigation">
+                                <ul class="pager">
+                                    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> 上一页</a>
+                                    </li>
+                                    <li class="next"><a href="#">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <button type="button" id="btn-add" class="btn btn-primary btn-block"
-                                    onclick="check('btn-add');">
-                                <span class="glyphicon glyphicon-plus"></span> 新增
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <button type="button" id="btn-update" class="btn btn-primary btn-block"
-                                    onclick="check('btn-update');">
-                                <span class="glyphicon glyphicon-edit"></span> 修改
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <button type="button" id="btn-delete" class="btn btn-primary btn-block"
-                                    onclick="check('btn-delete');">
-                                <span class="glyphicon glyphicon-trash"></span> 删除
-                            </button>
-                        </div>
-                    </div>
-                    <nav aria-label="Page navigation">
-                        <ul class="pager">
-                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> 上一页</a>
-                            </li>
-                            <li class="next"><a href="#">下一页 <span aria-hidden="true">&rarr;</span></a></li>
-                        </ul>
-                    </nav>
                 </div>
+
             </div>
-
-
         </form>
+    </div>
+    <div class="panel-footer">
         <div class="table-responsive">
             <!--table-striped-->
             <table class="table table-hover">
@@ -163,8 +172,6 @@
                 </tbody>
             </table>
         </div>
-
-
     </div>
 </div>
 </body>

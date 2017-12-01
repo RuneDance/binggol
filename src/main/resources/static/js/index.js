@@ -109,7 +109,7 @@ function check(arg) {
         });
     } else if (arg == 'btn-update') {
         if (typeof (no) == 'undefined' || no == '') {
-            layer.msg(' 请选择所要修改的数据 ！', {icon: 0});
+            layer.msg(' 请选择所要修改的 数据 ！', {icon: 0, time: 2455});
         } else {
             BootstrapDialog.show({
                 title: '修改员工信息',
@@ -160,7 +160,7 @@ function check(arg) {
         }
     } else if (arg == 'btn-delete') {
         if (typeof (no) == 'undefined' || no == '') {
-            layer.msg(' 请选择所要删除的数据 ！', {icon: 0});
+            layer.msg(' 请选择所要删除的 数据 ！', {icon: 0, time: 2455});
         } else {
             layer.confirm('确定要删除信息 ？', {
                 title: '系统提示',
