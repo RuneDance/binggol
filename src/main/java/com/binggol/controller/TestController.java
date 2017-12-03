@@ -21,6 +21,11 @@ public class TestController {
 
     QueryEmp queryEmp =new QueryEmp();
 
+    @RequestMapping(value = "/markdown")
+    public String markdown() {
+        return "markdown";
+    }
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(Model model) {
         SPResult spResult = empSP.search(queryEmp);
