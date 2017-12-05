@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑器</title>
+    <!-- editormd.css -->
+    <link rel="stylesheet" href="../plugs/editor.md-1.5.0/css/editormd.css">
+    <link rel="stylesheet" href="../plugs/editor.md-1.5.0/lib/codemirror/codemirror.min.css"/>
+    <link rel="stylesheet" href="../plugs/editor.md-1.5.0/lib/codemirror/addon/dialog/dialog.css"/>
+    <link rel="stylesheet" href="../plugs/editor.md-1.5.0/lib/codemirror/addon/search/matchesonscrollbar.css"/>
+    <!-- edit.css -->
+    <link rel="stylesheet" href="../css/edit.css"/>
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+
+
+    <!-- jquery 3.2.1 -->
+    <script src="../plugs/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <!-- editormd.min.js 1.5.0 -->
+    <script src="../plugs/editor.md-1.5.0/js/editormd.min.js"></script>
+    <!-- edit.js -->
+    <script src="../js/edit.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/codemirror/codemirror.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/codemirror/addons.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/codemirror/modes.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/marked.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/prettify.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/raphael.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/underscore.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/sequence-diagram.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/flowchart.min.js"></script>
+    <script src="../plugs/editor.md-1.5.0/lib/jquery.flowchart.min.js"></script>
+
+    <!-- if setting tex == true -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css"/>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
+</head>
+<body>
+<div id="layout">
+    <div class="btns">
+        <button id="save-btn" onclick="save_markdown()">保 存</button>
+        <button id="white-btn" onclick="add_white_theme()">白 色</button>
+        <button id="black-btn" onclick="add_black_theme()">黑 色</button>
+        <button id="ch-en-btn"><span class="ch">中</span>/<span class="en">英</span></button>
+    </div>
+    <div id="md_edit">
+        <textarea style="display:none;"></textarea>
+    </div>
+</div>
+</body>
+</html>

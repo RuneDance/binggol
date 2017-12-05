@@ -19,11 +19,21 @@ public class TestController {
     @Autowired
     private EmpSP empSP;
 
-    QueryEmp queryEmp =new QueryEmp();
+    QueryEmp queryEmp = new QueryEmp();
 
-    @RequestMapping(value = "/markdown")
-    public String markdown() {
-        return "markdown";
+    @RequestMapping(value = "/edit")
+    public String edit() {
+        return "edit";
+    }
+
+    @RequestMapping(value = "/home")
+    public String home() {
+        return "home";
+    }
+
+    @RequestMapping(value = "/full-home")
+    public String full_home() {
+        return "full-home";
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
@@ -31,9 +41,9 @@ public class TestController {
         SPResult spResult = empSP.search(queryEmp);
         List<ResultEmp> empList = spResult.getRsList();
         if (empList != null) {
-            model.addAttribute("empList",empList);
+            model.addAttribute("empList", empList);
             return "/test";
-        }else {
+        } else {
             return "/test";
         }
 
