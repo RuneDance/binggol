@@ -5,4 +5,5 @@ package com.binggol.utils;
  */
 public class DBConstant {
     public static String PKGB_MANAGEEMP = "PKGB_MANAGEEMP";
+    public static String PKGB_MANAGEMARKDOWN = "PKGB_MANAGEMARKDOWN";
 }

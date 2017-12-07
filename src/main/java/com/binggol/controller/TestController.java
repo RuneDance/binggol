@@ -21,21 +21,6 @@ public class TestController {
 
     QueryEmp queryEmp = new QueryEmp();
 
-    @RequestMapping(value = "/edit")
-    public String edit() {
-        return "edit";
-    }
-
-    @RequestMapping(value = "/home")
-    public String home() {
-        return "home";
-    }
-
-    @RequestMapping(value = "/full-home")
-    public String full_home() {
-        return "full-home";
-    }
-
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(Model model) {
         SPResult spResult = empSP.search(queryEmp);

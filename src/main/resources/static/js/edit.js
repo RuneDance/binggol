@@ -36,6 +36,33 @@ function add_black_theme() {
     init().setPreviewTheme('dark');
 }
 
+/**
+ * 保存
+ */
 function save_markdown() {
-    init().getMarkdown();
+    var content = init().getMarkdown();
+    if (content == '') {
+        layer.msg(' 内容 不能为 空 ！', {icon: 0, time: 2455});
+    } else {
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "/addMarkdown",
+            dataType: "text",
+            data: {
+                content: content
+            },
+            success: function (data) {
+                if (data.retCode == 0) {
+                    layer.msg(data.msg, {
+                        icon: 1,
+                        time: 2000
+                    });
+                }
+            },
+            error: function () {
+                layer.msg(' 服务器出现异常 ！', {icon: 5});
+            }
+        });
+    }
 }
