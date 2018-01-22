@@ -5,18 +5,21 @@ import com.binggol.utils.DBConstant;
 import com.binggol.utils.SPResult;
 import com.binggol.utils.TypeConvertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.support.AbstractLobCreatingPreparedStatementCallback;
+import org.springframework.jdbc.support.lob.LobCreator;
 import org.springframework.stereotype.Component;
 
-import java.sql.CallableStatement;
-import java.sql.Date;
-import java.sql.Types;
+import java.io.Reader;
+import java.io.StringReader;
+import java.sql.*;
 
 @Component
 public class MarkdownSP {
     private String spkName = DBConstant.PKGB_MANAGEMARKDOWN;
-
+    //private LobCreator lobCreator;
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -40,8 +43,11 @@ public class MarkdownSP {
                 new Exception("日期不能为空！");
             }
             if (resultMarkdown.getContent() != null) {
-                cs.setClob(3, TypeConvertUtil.stringToClob(resultMarkdown.getContent()));
+                //cs.setClob(3, TypeConvertUtil.stringToClob(resultMarkdown.getContent()));
                 //cs.setString(3,resultMarkdown.getContent());
+                //lobCreator.setClobAsString(cs,3,resultMarkdown.getContent());
+                Reader reader = new StringReader(resultMarkdown.getContent());
+                cs.setClob(3,reader);
             } else {
                 new Exception("内容不能为空！");
             }
@@ -70,6 +76,20 @@ public class MarkdownSP {
         });
         return spResult;
     }
+
+
+    /*public SPResult addMarkdown(ResultMarkdown resultMarkdown) {
+        jdbcTemplate.execute(new AbstractLobCreatingPreparedStatementCallback(LobHandler lobHandler) {
+
+            @Override
+            protected void setValues(PreparedStatement ps, LobCreator lobCreator) throws SQLException, DataAccessException {
+
+            }
+        });
+    }*/
+
+
+
 
 
 }

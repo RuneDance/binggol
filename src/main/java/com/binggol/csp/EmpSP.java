@@ -4,7 +4,7 @@ import com.binggol.entity.QueryEmp;
 import com.binggol.entity.ResultEmp;
 import com.binggol.utils.DBConstant;
 import com.binggol.utils.SPResult;
-import oracle.jdbc.driver.OracleTypes;
+import oracle.jdbc.internal.OracleTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.JdbcTemplate;
